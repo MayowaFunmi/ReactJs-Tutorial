@@ -23,14 +23,16 @@ class Counter extends Component {
         )
         // console.log(this.state.count)....this is before the state is set. It's wrong
         //whenever you need to execute a code after the setState method, 
-        //do not write the code after the setState but as a second parameter in the setState object
+        //do not write the code after the setState but as a second argument in the setState object
     }
     
     fiveTimes() {
-        this.setState(prevState => ({
+        this.setState((prevState) => ({
             count: prevState.count + 1
         }))
         console.log(this.state.count)
+        // whenever you have to update state based on the previoys state value,
+        // pass in a function as an argument instead of the regular object
     }
 
     incrementFive() {
